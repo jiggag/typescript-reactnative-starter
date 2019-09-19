@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { Button, Platform, StyleSheet, Text, View } from 'react-native';
 import {
   NavigationParams,
   NavigationScreenProp,
@@ -24,15 +24,22 @@ export interface Props {
 
 export class Home extends Component<Props> {
   componentDidMount() {
-    this.props.fetchUser('1');
+    fetchUser('1');
   }
 
   render() {
+    const { navigation } = this.props;
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
           {strings.hello}. Welcome to React Native!
         </Text>
+        <Button
+          onPress={() => navigation.navigate('Page', {
+            description: 'navigate => 페이지 이동 (이미 스택에 있는 경우 이동 안함)',
+          })}
+          title="navigate"
+        />
         <Text style={styles.instructions}>To get started, edit Home.tsx</Text>
         <Text style={styles.instructions}>{instructions}</Text>
         <Text style={styles.welcome}>{strings.bye}!!!</Text>

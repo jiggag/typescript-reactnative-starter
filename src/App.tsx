@@ -1,4 +1,4 @@
-import { createBottomTabNavigator } from 'react-navigation';
+import { createBottomTabNavigator, createStackNavigator } from 'react-navigation';
 import Home from './containers/Home';
 import Settings from './containers/Settings';
 
@@ -10,5 +10,11 @@ const App = createBottomTabNavigator({
     screen: Settings,
   },
 });
+const AppStack = createStackNavigator({
+  App,
+  Page: {
+    screen: Settings,
+  },
+});
 
-export default App;
+export default AppStack;
