@@ -18,7 +18,7 @@
     "rename": "react-native-rename",
     "jetify": "npx jetify",
     "icon": "npx app-icon generate -i publishing/icon.png",
-    "translate": "node ./src/constants/translationGenerator.js" 
+    "translate": "node ./src/constants/translationGenerator.js"
   },
   "husky": {
     "hooks": {
