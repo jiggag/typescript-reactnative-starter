@@ -27,9 +27,7 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 // tslint:disable-next-line: no-shadowed-variable
-const appMiddleware = (store: any) => (next: (arg0: any) => void) => (
-  action: any,
-) => {
+const appMiddleware = (store: any) => (next: (arg0: any) => void) => (action: any) => {
   //   var state = store.getState()
   //   switch (action.type) {
   //     case actions.ADD_TASK:

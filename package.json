@@ -29,7 +29,6 @@
   "dependencies": {
     "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/react-redux": "^7.1.0",
-    "@types/redux-persist": "^4.3.1",
     "autobind-decorator": "^2.4.0",
     "react": "16.8.6",
     "react-native": "0.60.4",
@@ -39,7 +38,7 @@
     "react-navigation": "^3.11.1",
     "react-redux": "^7.1.0",
     "redux": "^4.0.1",
-    "redux-persist": "^5.10.0",
+    "redux-persist": "6",
     "redux-saga": "^1.0.5",
     "typesafe-actions": "^4.4.2"
   },

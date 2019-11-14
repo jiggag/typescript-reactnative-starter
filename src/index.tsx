@@ -10,7 +10,6 @@ import { persistor, store } from './store';
 
 // useScreens();
 
-// tslint:disable-next-line: variable-name
 const AppContainer = createAppContainer(App);
 
 export default class Root extends React.Component {
