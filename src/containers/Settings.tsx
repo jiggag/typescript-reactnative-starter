@@ -16,10 +16,18 @@ export default class Settings extends Component<Props> {
         <Button
           onPress={() =>
             navigation.navigate('Page', {
-              description: 'navigate => 페이지 이동 (이미 스택에 있는 경우 이동 안함)',
+              description: 'navigate => 페이지 이동 (이미 스택에 있는 경우 헤당 스택으로 이동)',
             })
           }
-          title="navigate('Page'): route이동(이미 있는 스택인 경우 이동 안됨)"
+          title="navigate('Page'): route이동(이미 있는 스택인 경우 헤당 스택으로 이동)"
+        />
+        <Button
+          onPress={() =>
+            navigation.navigate('Page2', {
+              description: 'navigate => 페이지 이동 (이미 스택에 있는 경우 헤당 스택으로 이동)',
+            })
+          }
+          title="navigate('Page2'): route이동(이미 있는 스택인 경우 헤당 스택으로 이동)"
         />
         <Button
           onPress={() =>
@@ -31,8 +39,11 @@ export default class Settings extends Component<Props> {
         />
         <Button onPress={() => navigation.pop(1)} title="pop(n): n스택빼기" />
         <Button onPress={() => navigation.goBack()} title="goBack() => 1스택빼기" />
-        <Button onPress={() => navigation.popToTop()} title="popToTop() => 스택 초기화, 맨 처음 페이지로 이동" />
-        <Button onPress={() => navigation.replace('App')} title="replace('App'): 현재 스택에 화면만 대체" />
+        <Button
+          onPress={() => navigation.popToTop()}
+          title="popToTop() => 스택 초기화, 맨 처음 페이지로 이동(navigate된곳으로)"
+        />
+        <Button onPress={() => navigation.replace('Tab')} title="replace('Tab'): 현재 스택에 화면만 대체" />
       </View>
     );
   }

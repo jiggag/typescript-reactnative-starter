@@ -34,6 +34,14 @@ export class Home extends Component<Props> {
           }
           title="navigate"
         />
+        <Button
+          onPress={() =>
+            navigation.navigate('Page2', {
+              description: 'navigate => 페이지 Page2',
+            })
+          }
+          title="page2"
+        />
         <Text style={styles.instructions}>To get started, edit Home.tsx</Text>
         <Text style={styles.instructions}>{instructions}</Text>
         <Text style={styles.welcome}>{strings.bye}!!!</Text>

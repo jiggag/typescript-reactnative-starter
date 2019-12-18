@@ -6,3 +6,6 @@
 ##
 #### `tsconfig.json`
 `resolveJsonModule: true` json 파일 옵션 추가 설정
+##
+#### `.prettierrc`
+코드 스타일 정리
