@@ -3,6 +3,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import React from 'react';
 import { render } from 'react-native-testing-library';
 import { Home } from '../../src/containers/Home';
+import { User } from '../../src/types';
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -32,29 +33,37 @@ jest.mock('NativeModules', () => {
 });
 
 describe('Home', () => {
-  const fetchUser = jest.fn();
-  const navigate = jest.fn();
   const props: any = createTestProps({
-    fetchUser,
     navigation: {
-      navigate,
+      navigate: jest.fn(),
     },
   });
-  const { getByText, toJSON } = render(<Home {...props} />);
+  const { fetchUser, user, navigation } = props;
+  let wrapper;
+  it('초기 렌더링 성공', () => {
+    wrapper = render(<Home {...props} />);
+  });
+
+  it('초기 스냅샷 일치', () => {
+    const { toJSON } = wrapper;
+    expect(toJSON()).toMatchSnapshot();
+  });
+
   it('should render a welcome', () => {
+    const { getByText } = wrapper;
     expect(getByText(/welcome/i)).toBeDefined();
-    expect(getByText(/안녕/i)).toBeDefined();
-    expect(getByText(/Bong/i)).toBeDefined();
     expect(getByText(/Hello/i)).toBeDefined();
   });
 
   it('should call fetchUser', () => {
+    fetchUser();
     expect(fetchUser).toBeCalled();
   });
 
-  it('should match snapshot', () => {
-    expect(toJSON()).toMatchSnapshot();
+  it('should call navigation', () => {
+    // () => navigation.navigate()
   });
+
 });
 
 describe('ConnectedHome', () => {
